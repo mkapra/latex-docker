@@ -1,8 +1,14 @@
 FROM leplusorg/latex
 
+ENV DEBIAN_FRONTEND=noninteractive
+
 # Install latest pandoc
 RUN wget https://github.com/jgm/pandoc/releases/download/2.19.2/pandoc-2.19.2-1-amd64.deb
 RUN dpkg -i pandoc-2.19.2-1-amd64.deb
+
+# Install pygments for minted
+RUN apt update && apt install -y python3-pygments 
+RUN pip install Pygments
 
 # Install eisvogel template
 RUN mkdir -p /root/.pandoc/templates/
