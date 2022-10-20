@@ -12,7 +12,7 @@ RUN pip3 install Pygments
 
 # Install eisvogel template
 RUN mkdir -p /root/.pandoc/templates/
-COPY eisvogel-template/eisvogel.tex /root/.pandoc/templates
+COPY eisvogel-template/eisvogel.tex /root/.pandoc/templates/eisvogel.latex
 
 # Install ieee template
 RUN mkdir -p /root/texmf/tex/latex/ieee
