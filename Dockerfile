@@ -18,4 +18,7 @@ COPY eisvogel-template/eisvogel.tex /root/.pandoc/templates/eisvogel.latex
 RUN mkdir -p /root/texmf/tex/latex/ieee
 COPY IEEEtran.cls /root/texmf/tex/latex/ieee/
 
+# Initialize font db
+luaotfload-tool -u
+
 WORKDIR /latex
